@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar Inscripción y Pago - PcLab Academy</title>
+  <link rel="icon" type="image/jpeg" href="https://github.com/MundoIA-Inteligencia/PcLab-Academy-/blob/main/Icono.jpeg?raw=true">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Encabezado Principal (Navbar)
+       ========================================================================== -->
+  <header class="header-principal">
+    <div class="container navbar">
+      
+      <div class="brand-logo-area">
+        <!-- Icono Oficial de PcLab Academy -->
+        <div class="logo-container" title="PcLab Academy">
+          <img src="https://github.com/MundoIA-Inteligencia/PcLab-Academy-/blob/main/Icono.jpeg?raw=true" alt="Icono PcLab Academy">
+        </div>
+
+        <div class="brand-text">
+          <h1>PcLab Academy</h1>
+          <!-- Eslogan Oficial de PcLab Academy -->
+          <img src="https://github.com/MundoIA-Inteligencia/PcLab-Academy-/blob/main/Eslogan.jpeg?raw=true" alt="Eslogan PcLab Academy" class="brand-slogan-img">
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="cursos.html">Cursos</a>
+        <a href="cursos.html#niveles">Niveles</a>
+        <a href="pago.html" class="active btn-nav">Inscripciones</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Contenido Principal de Pagos
+       ========================================================================== -->
+  <main class="container checkout-wrapper">
+    
+    <div style="margin-bottom: 30px;">
+      <h2 style="font-size: 2.2rem; color: rgb(58, 12, 107);">Pasarela Segura de Inscripción</h2>
+      <!-- ESPACIO PARA INDICACIÓN -->
+      <p style="color: rgb(110, 100, 125);">
+        <!-- INSERTA AQUÍ TU INDICACIÓN -->
+        Completa tus datos personales mediante la ventana emergente y selecciona tu método de pago favorito (Tarjeta de Crédito o PayPal).
+      </p>
+    </div>
+
+    <div class="checkout-grid">
+      
+      <!-- Columna 1: Resumen de Compra -->
+      <aside class="resumen-card">
+        <h3>Resumen de Inscripción</h3>
+        
+        <div class="resumen-item">
+          <span>Curso Seleccionado:</span>
+          <strong id="resumen-nombre-curso" style="color: rgb(74, 20, 140); text-align: right; max-width: 60%;">Curso Especializado</strong>
+        </div>
+
+        <div class="resumen-item">
+          <span>Acceso al Aula Virtual:</span>
+          <span>Inmediato (24/7)</span>
+        </div>
+
+        <div class="resumen-item">
+          <span>Certificado Digital:</span>
+          <span>Incluido ✓</span>
+        </div>
+
+        <div class="resumen-item">
+          <span>Materiales y Prompts:</span>
+          <span>Incluidos ✓</span>
+        </div>
+
+        <!-- ESPACIO PARA EL PRECIO -->
+        <div class="resumen-total">
+          <span>Total a pagar:</span>
+          <!-- INSERTA AQUÍ TU PRECIO O SE ACTUALIZARÁ DINÁMICAMENTE -->
+          <span id="resumen-total-pago" style="color: rgb(106, 27, 154);">$15.00 USD</span>
+        </div>
+
+        <!-- Vista previa de los datos personales ingresados -->
+        <div id="datos-estudiante-preview" style="margin-top: 20px;">
+          <p style="font-size: 0.85rem; color: rgb(110, 100, 125); font-style: italic;">
+            * Aún no has ingresado tus datos personales. Haz clic en el botón de la derecha para agregarlos.
+          </p>
+        </div>
+
+        <div class="garantia-badge">
+          🔒 Compra 100% segura y encriptada bajo protocolo SSL de 256 bits.
+        </div>
+
+        <!-- Apartado: ¿Quieres saber más de nosotros? Escríbenos -->
+        <div class="whatsapp-contact-box">
+          <h4>¿Quieres saber más de nosotros? Escríbenos</h4>
+          <p>¿Tienes dudas sobre los cursos o el proceso de inscripción? Chatea con nosotros:</p>
+          <a href="https://wa.me/50370981329?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20acerca%20de%20los%20cursos%20de%20PcLab%20Academy" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+            <svg viewBox="0 0 24 24" width="22" height="22">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43l-.48-.01c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29z"/>
+            </svg>
+            <span>WhatsApp: 50370981329</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Columna 2: Datos Personales y Métodos de Pago -->
+      <section class="payment-card">
+        <h2>Detalles de Pago</h2>
+
+        <!-- BOTÓN QUE ABRE LA VENTANA DE DATOS PERSONALES -->
+        <button type="button" class="btn-open-modal" id="btn-abrir-modal">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          Paso 1: Abrir Ventana de Datos Personales
+        </button>
+
+        <h3 style="font-size: 1.15rem; color: rgb(58, 12, 107); margin-bottom: 15px;">Paso 2: Selecciona Método de Pago</h3>
+
+        <!-- Pestañas para elegir: Tarjeta de Crédito o PayPal -->
+        <div class="payment-tabs">
+          <button type="button" class="tab-btn active" id="tab-tarjeta">
+            💳 Tarjeta de Crédito / Débito
+          </button>
+          <button type="button" class="tab-btn" id="tab-paypal">
+            🅿️ PayPal
+          </button>
+        </div>
+
+        <!-- OPCIÓN A: PAGO CON TARJETA DE CRÉDITO -->
+        <form id="form-tarjeta-pago">
+          <div class="payment-form-group">
+            <label for="card-name">Nombre en la Tarjeta</label>
+            <input type="text" id="card-name" placeholder="Como figura en el plástico" required>
+          </div>
+
+          <div class="payment-form-group">
+            <label for="card-number">Número de Tarjeta de Crédito</label>
+            <input type="text" id="card-number" placeholder="4000 1234 5678 9010" maxlength="19" required>
+          </div>
+
+          <div class="form-row">
+            <div class="payment-form-group">
+              <label for="card-exp">Fecha de Expiración</label>
+              <input type="text" id="card-exp" placeholder="MM/AA" maxlength="5" required>
+            </div>
+            <div class="payment-form-group">
+              <label for="card-cvv">Código CVV / CVC</label>
+              <input type="password" id="card-cvv" placeholder="123" maxlength="4" required>
+            </div>
+          </div>
+
+          <!-- ESPACIO PARA INDICACIÓN ADICIONAL -->
+          <p style="font-size: 0.8rem; color: rgb(110, 100, 125); margin-bottom: 15px;">
+            <!-- INSERTA AQUÍ TU INDICACIÓN -->
+            Se realizará el cargo en tu moneda local según la tasa de cambio vigente de tu banco emisor.
+          </p>
+
+          <button type="submit" class="btn-pay-card">
+            Pagar con Tarjeta de Crédito
+          </button>
+        </form>
+
+        <!-- OPCIÓN B: PAGO CON PAYPAL -->
+        <div id="vista-paypal-pago" class="paypal-box" style="display: none;">
+          <h4 style="font-size: 1.2rem; color: rgb(0, 48, 135); margin-bottom: 10px;">Pagar de forma rápida y segura con PayPal</h4>
+          <p style="color: rgb(110, 100, 125); font-size: 0.95rem; margin-bottom: 20px;">
+            Serás redirigido a la ventana oficial de PayPal para autorizar tu transacción sin compartir tus datos financieros con el comercio.
+          </p>
+
+          <!-- Botón Estilo PayPal -->
+          <button type="button" class="btn-paypal-checkout" id="btn-paypal-action">
+            <span style="font-weight: 900; font-style: italic;">PayPal</span>
+            <span>Continuar al Pago</span>
+          </button>
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- ==========================================================================
+       VENTANA MODAL: INGRESO DE DATOS PERSONALES
+       ========================================================================== -->
+  <div class="modal-overlay" id="modal-datos-personales">
+    <div class="modal-container">
+      
+      <div class="modal-header">
+        <h3>Ingreso de Datos Personales</h3>
+        <button type="button" class="modal-close-btn" id="btn-cerrar-modal">&times;</button>
+      </div>
+
+      <!-- ESPACIO PARA TU INDICACIÓN EN LA VENTANA -->
+      <p style="font-size: 0.9rem; color: rgb(110, 100, 125); margin-bottom: 20px;">
+        <!-- INSERTA AQUÍ TU INDICACIÓN -->
+        Por favor ingresa tus datos reales para emitir tu certificado y generar tus credenciales de acceso a PcLab Academy.
+      </p>
+
+      <form id="form-datos-personales">
+        
+        <div class="payment-form-group">
+          <label for="input-nombre">Nombre y Apellidos Completos *</label>
+          <input type="text" id="input-nombre" placeholder="Ej: Juan Pérez Morales" required>
+        </div>
+
+        <div class="payment-form-group">
+          <label for="input-email">Correo Electrónico (Acceso al Curso) *</label>
+          <input type="email" id="input-email" placeholder="ejemplo@correo.com" required>
+        </div>
+
+        <div class="form-row">
+          <div class="payment-form-group">
+            <label for="input-telefono">Teléfono / WhatsApp *</label>
+            <input type="tel" id="input-telefono" placeholder="+52 55 1234 5678" required>
+          </div>
+          <div class="payment-form-group">
+            <label for="input-dni">DNI / Cédula / Identificación</label>
+            <input type="text" id="input-dni" placeholder="Número de documento">
+          </div>
+        </div>
+
+        <div class="payment-form-group">
+          <label for="input-pais">País de Residencia</label>
+          <input type="text" id="input-pais" placeholder="Ej: México, España, Colombia, Argentina...">
+        </div>
+
+        <button type="submit" class="btn-guardar-datos">
+          Guardar y Confirmar Datos
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Pie de Página (Footer)
+       ========================================================================== -->
+  <footer class="footer-principal">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-brand">
+          <h2>PcLab Academy</h2>
+          <!-- Eslogan Oficial de PcLab Academy -->
+          <div class="footer-slogan-box">
+            <img src="https://github.com/MundoIA-Inteligencia/PcLab-Academy-/blob/main/Eslogan.jpeg?raw=true" alt="Eslogan PcLab Academy">
+          </div>
+          <p style="margin-top: 12px; font-size: 0.85rem; color: rgb(246, 240, 252);">Pagos protegidos y certificados oficiales.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="pago.html">Página de Pago</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Soporte</h4>
+          <ul>
+            <li><a href="https://wa.me/50370981329" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 50370981329</a></li>
+            <li><a href="#">Preguntas Frecuentes</a></li>
+            <li><a href="#">Términos y Condiciones</a></li>
+            <li><a href="#">Políticas de Privacidad</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 PcLab Academy. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1084 @@
+/* ==========================================================================
+   PcLab Academy - Hoja de Estilos Oficial (style.css)
+   Paleta cromática: Tonos Morados (RGB) y Blanco puro
+   ========================================================================== */
+
+:root {
+  /* Paleta Principal de Morados en formato RGB */
+  --color-morado-oscuro: rgb(58, 12, 107);       /* rgb(58, 12, 107) - Fondos profundos y texto fuerte */
+  --color-morado-principal: rgb(106, 27, 154);   /* rgb(106, 27, 154) - Color insignia de marca */
+  --color-morado-medio: rgb(142, 36, 170);       /* rgb(142, 36, 170) - Hover, acentos y bordes */
+  --color-morado-claro: rgb(186, 104, 200);      /* rgb(186, 104, 200) - Detalles y etiquetas */
+  --color-morado-fondo: rgb(246, 240, 252);      /* rgb(246, 240, 252) - Fondo suave de secciones */
+  --color-morado-hover: rgb(85, 20, 125);        /* rgb(85, 20, 125) - Estado hover botones */
+
+  /* Blancos y Neutrales en formato RGB */
+  --color-blanco: rgb(255, 255, 255);            /* rgb(255, 255, 255) - Blanco puro */
+  --color-blanco-humo: rgb(250, 250, 252);       /* rgb(250, 250, 252) - Fondo general */
+  --color-texto-oscuro: rgb(35, 30, 45);         /* rgb(35, 30, 45) - Texto de alta legibilidad */
+  --color-texto-mutado: rgb(110, 100, 125);      /* rgb(110, 100, 125) - Texto secundario */
+  --color-borde: rgb(225, 215, 235);             /* rgb(225, 215, 235) - Líneas divisorias */
+  --color-paypal: rgb(0, 112, 186);              /* Azul distintivo para botón PayPal */
+
+  /* Sombras y Efectos */
+  --sombra-suave: 0 4px 15px rgba(58, 12, 107, 0.08);
+  --sombra-elevada: 0 12px 28px rgba(58, 12, 107, 0.15);
+  --radio-borde: 12px;
+  --transicion: all 0.3s ease;
+}
+
+/* Reseteo y Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  background-color: var(--color-blanco-humo);
+  color: var(--color-texto-oscuro);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ==========================================================================
+   Barra de Navegación (Header / Navbar)
+   ========================================================================== */
+.header-principal {
+  background-color: var(--color-blanco);
+  border-bottom: 2px solid var(--color-morado-fondo);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--sombra-suave);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.brand-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-container {
+  width: 68px;
+  height: 68px;
+  background-color: var(--color-morado-fondo);
+  border: 2px solid var(--color-morado-principal);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(106, 27, 154, 0.2);
+}
+
+.logo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand-text h1 {
+  font-size: 1.75rem;
+  color: var(--color-morado-oscuro);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.brand-text .brand-slogan {
+  font-size: 0.85rem;
+  color: var(--color-morado-medio);
+  font-weight: 500;
+}
+
+.brand-slogan-img {
+  max-height: 42px;
+  width: auto;
+  object-fit: contain;
+  margin-top: 4px;
+  display: block;
+  border-radius: 6px;
+}
+
+.hero-slogan-banner {
+  margin: 15px 0 25px 0;
+  display: inline-block;
+}
+
+.hero-slogan-banner img {
+  max-height: 115px;
+  max-width: 100%;
+  width: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: var(--color-blanco);
+  padding: 8px;
+}
+
+.footer-slogan-box {
+  margin-top: 14px;
+}
+
+.footer-slogan-box img {
+  max-height: 55px;
+  max-width: 100%;
+  background: var(--color-blanco);
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links a {
+  font-weight: 600;
+  color: var(--color-texto-oscuro);
+  transition: var(--transicion);
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--color-morado-principal);
+}
+
+.btn-nav {
+  background-color: var(--color-morado-principal);
+  color: var(--color-blanco) !important;
+  padding: 8px 20px;
+  border-radius: 25px;
+  transition: var(--transicion);
+}
+
+.btn-nav:hover {
+  background-color: var(--color-morado-hover);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Hero Section (Página de Inicio)
+   ========================================================================== */
+.hero-section {
+  background: linear-gradient(135deg, var(--color-morado-oscuro) 0%, var(--color-morado-principal) 100%);
+  color: var(--color-blanco);
+  padding: 80px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-content h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-content .hero-badge {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--color-blanco);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  backdrop-filter: blur(5px);
+}
+
+.hero-content p {
+  font-size: 1.15rem;
+  color: var(--color-morado-fondo);
+  margin-bottom: 30px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-principal {
+  background-color: var(--color-blanco);
+  color: var(--color-morado-oscuro);
+  font-weight: 700;
+  padding: 14px 30px;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transicion);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-principal:hover {
+  background-color: var(--color-morado-fondo);
+  transform: translateY(-3px);
+}
+
+.btn-secundario {
+  background-color: transparent;
+  color: var(--color-blanco);
+  border: 2px solid var(--color-blanco);
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 30px;
+  transition: var(--transicion);
+  cursor: pointer;
+}
+
+.btn-secundario:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Espacio para la foto destacada de persona */
+.hero-image-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.person-photo-hero {
+  width: 340px;
+  height: 410px;
+  background-color: var(--color-blanco);
+  border: 4px solid rgba(255, 255, 255, 0.85);
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+  position: relative;
+}
+
+.person-photo-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.person-photo-hero:hover img {
+  transform: scale(1.03);
+}
+
+.person-placeholder-hero {
+  width: 320px;
+  height: 380px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 3px dashed var(--color-blanco);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+  box-shadow: var(--sombra-elevada);
+}
+
+.person-placeholder-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.placeholder-tag {
+  background-color: var(--color-morado-oscuro);
+  color: var(--color-blanco);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   Secciones Informativas (Pilares de la Academia)
+   ========================================================================== */
+.section-padding {
+  padding: 80px 0;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.section-header .subtitulo {
+  color: var(--color-morado-principal);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.section-header h2 {
+  font-size: 2.2rem;
+  color: var(--color-morado-oscuro);
+  margin-bottom: 15px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  padding: 35px 25px;
+  box-shadow: var(--sombra-suave);
+  transition: var(--transicion);
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-morado-medio);
+  box-shadow: var(--sombra-elevada);
+}
+
+.feature-icon-box {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  background-color: var(--color-morado-fondo);
+  color: var(--color-morado-principal);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  color: var(--color-morado-oscuro);
+  margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   Catálogo de Cursos (cursos.html)
+   ========================================================================== */
+.cursos-catalogo-section {
+  padding: 60px 0 90px;
+}
+
+.nivel-bloque {
+  margin-bottom: 70px;
+}
+
+.nivel-banner {
+  background: linear-gradient(90deg, var(--color-morado-principal) 0%, var(--color-morado-medio) 100%);
+  color: var(--color-blanco);
+  padding: 16px 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nivel-banner h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.nivel-banner span {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.cursos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 30px;
+}
+
+.curso-card {
+  background-color: var(--color-blanco);
+  border-radius: var(--radio-borde);
+  border: 1px solid var(--color-borde);
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transicion);
+}
+
+.curso-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-elevada);
+  border-color: var(--color-morado-claro);
+}
+
+/* Contenedor de la Imagen del Procesador de Texto */
+.text-processor-img-placeholder {
+  width: 100%;
+  height: 200px;
+  background-color: var(--color-morado-fondo);
+  border-bottom: 2px solid var(--color-morado-medio);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.text-processor-img-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.curso-card:hover .text-processor-img-placeholder img {
+  transform: scale(1.04);
+}
+
+.tag-processor {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--color-morado-oscuro);
+  color: var(--color-blanco);
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.curso-body {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.curso-categoria {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-morado-principal);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.curso-titulo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-morado-oscuro);
+  margin-bottom: 12px;
+}
+
+/* Espacio para la indicación del curso */
+.curso-indicacion {
+  background-color: var(--color-morado-fondo);
+  border-left: 4px solid var(--color-morado-principal);
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: var(--color-texto-oscuro);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+/* Instructor / Foto de la persona */
+.instructor-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.instructor-photo-placeholder {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-morado-fondo);
+  border: 2px dashed var(--color-morado-medio);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 0.7rem;
+  text-align: center;
+  color: var(--color-morado-principal);
+}
+
+.instructor-photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.instructor-info h4 {
+  font-size: 0.9rem;
+  color: var(--color-morado-oscuro);
+}
+
+.instructor-info p {
+  font-size: 0.78rem;
+  color: var(--color-texto-mutado);
+}
+
+/* Precio y Botón de Inscripción */
+.curso-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.curso-precio-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.precio-label {
+  font-size: 0.75rem;
+  color: var(--color-texto-mutado);
+  text-transform: uppercase;
+}
+
+.precio-valor {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-morado-oscuro);
+}
+
+.btn-inscribirse {
+  background-color: var(--color-morado-principal);
+  color: var(--color-blanco);
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transicion);
+  font-size: 0.9rem;
+}
+
+.btn-inscribirse:hover {
+  background-color: var(--color-morado-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(106, 27, 154, 0.3);
+}
+
+/* ==========================================================================
+   Página de Checkout y Pagos (pago.html)
+   ========================================================================== */
+.checkout-wrapper {
+  padding: 60px 0 90px;
+}
+
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 40px;
+}
+
+/* Tarjeta de Resumen */
+.resumen-card {
+  background-color: var(--color-blanco);
+  border-radius: var(--radio-borde);
+  border: 1px solid var(--color-borde);
+  padding: 30px;
+  box-shadow: var(--sombra-suave);
+  height: fit-content;
+}
+
+.resumen-card h3 {
+  color: var(--color-morado-oscuro);
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-morado-fondo);
+}
+
+.resumen-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.resumen-total {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  margin-top: 15px;
+  border-top: 2px dashed var(--color-borde);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-morado-oscuro);
+}
+
+.garantia-badge {
+  margin-top: 25px;
+  background-color: var(--color-morado-fondo);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-morado-oscuro);
+  font-weight: 600;
+}
+
+/* Apartado de Contacto WhatsApp en Inscripción */
+.whatsapp-contact-box {
+  margin-top: 25px;
+  background: linear-gradient(135deg, rgb(245, 255, 248) 0%, rgb(232, 252, 238) 100%);
+  border: 1.5px solid rgb(167, 243, 208);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.12);
+}
+
+.whatsapp-contact-box h4 {
+  color: rgb(20, 83, 45);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.whatsapp-contact-box p {
+  color: rgb(22, 101, 52);
+  font-size: 0.86rem;
+  margin-bottom: 14px;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #25D366;
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebc59;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+}
+
+.btn-whatsapp svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* Panel de Pago */
+.payment-card {
+  background-color: var(--color-blanco);
+  border-radius: var(--radio-borde);
+  border: 1px solid var(--color-borde);
+  padding: 35px;
+  box-shadow: var(--sombra-suave);
+}
+
+.payment-card h2 {
+  color: var(--color-morado-oscuro);
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+/* Botón disparador de la ventana de datos personales */
+.btn-open-modal {
+  width: 100%;
+  background-color: var(--color-morado-fondo);
+  color: var(--color-morado-oscuro);
+  border: 2px dashed var(--color-morado-medio);
+  padding: 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 25px;
+  transition: var(--transicion);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-open-modal:hover {
+  background-color: var(--color-morado-claro);
+  color: var(--color-blanco);
+  border-color: var(--color-morado-principal);
+}
+
+/* Pestañas de Métodos de Pago */
+.payment-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 14px;
+  border: 2px solid var(--color-borde);
+  background-color: var(--color-blanco);
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--color-texto-mutado);
+  transition: var(--transicion);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tab-btn.active {
+  border-color: var(--color-morado-principal);
+  color: var(--color-morado-principal);
+  background-color: var(--color-morado-fondo);
+}
+
+/* Formularios de Pago */
+.payment-form-group {
+  margin-bottom: 18px;
+}
+
+.payment-form-group label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-morado-oscuro);
+  margin-bottom: 6px;
+}
+
+.payment-form-group input,
+.payment-form-group select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: var(--transicion);
+  outline: none;
+}
+
+.payment-form-group input:focus,
+.payment-form-group select:focus {
+  border-color: var(--color-morado-principal);
+  box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.15);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.btn-pay-card {
+  width: 100%;
+  background: linear-gradient(135deg, var(--color-morado-oscuro), var(--color-morado-principal));
+  color: var(--color-blanco);
+  border: none;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transicion);
+  margin-top: 10px;
+}
+
+.btn-pay-card:hover {
+  opacity: 0.95;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(106, 27, 154, 0.35);
+}
+
+/* Vista PayPal */
+.paypal-box {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: rgb(249, 250, 252);
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+}
+
+.btn-paypal-checkout {
+  background-color: #ffc439;
+  color: #003087;
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 15px 40px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(255, 196, 57, 0.4);
+  transition: var(--transicion);
+  margin-top: 15px;
+}
+
+.btn-paypal-checkout:hover {
+  background-color: #f2b72a;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Ventana Modal de Datos Personales
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(58, 12, 107, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transicion);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-container {
+  background-color: var(--color-blanco);
+  border-radius: 16px;
+  width: 90%;
+  max-width: 550px;
+  padding: 35px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  position: relative;
+  transform: translateY(-20px);
+  transition: var(--transicion);
+}
+
+.modal-overlay.active .modal-container {
+  transform: translateY(0);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  border-bottom: 2px solid var(--color-morado-fondo);
+  padding-bottom: 12px;
+}
+
+.modal-header h3 {
+  color: var(--color-morado-oscuro);
+  font-size: 1.4rem;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--color-texto-mutado);
+  cursor: pointer;
+  transition: var(--transicion);
+  line-height: 1;
+}
+
+.modal-close-btn:hover {
+  color: var(--color-morado-principal);
+}
+
+.btn-guardar-datos {
+  width: 100%;
+  background-color: var(--color-morado-principal);
+  color: var(--color-blanco);
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: var(--transicion);
+  margin-top: 15px;
+}
+
+.btn-guardar-datos:hover {
+  background-color: var(--color-morado-hover);
+}
+
+/* ==========================================================================
+   Pie de Página (Footer)
+   ========================================================================== */
+.footer-principal {
+  background-color: var(--color-morado-oscuro);
+  color: var(--color-blanco);
+  padding: 60px 0 25px;
+  margin-top: auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-brand h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.footer-brand p {
+  color: var(--color-morado-claro);
+  font-size: 0.95rem;
+  max-width: 320px;
+}
+
+.footer-links h4 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: var(--color-blanco);
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: var(--color-morado-fondo);
+  font-size: 0.9rem;
+  transition: var(--transicion);
+}
+
+.footer-links ul li a:hover {
+  color: var(--color-blanco);
+  padding-left: 5px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+  color: var(--color-morado-claro);
+}
+
+/* ==========================================================================
+   Diseño Responsivo (Mobile & Tablets)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .person-placeholder-hero {
+    margin: 0 auto;
+    width: 280px;
+    height: 330px;
+  }
+
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
